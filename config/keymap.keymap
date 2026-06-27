@@ -66,10 +66,10 @@
         layer_2 {
             bindings = <
 &trans        &trans            &trans             &trans           &trans    &trans                          &trans         &trans                &trans                 &trans    &trans         &trans
-&trans        &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp EXCLAMATION  &trans    &trans                          &kp INT_YEN    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans    &kp PERCENT    &trans
-&bt BT_SEL 0  &kp AT_SIGN       &kp SEMICOLON      &kp DOLLAR       &trans    &kp UNDERSCORE  &trans  &trans  &kp HASH       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &trans         &trans
-&bt BT_SEL 1  &trans            &trans             &kp COLON        &kp PIPE  &trans          &trans  &trans  &kp AMPERSAND  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp PAGE_UP    &trans
-&bt BT_SEL 2  &trans            &trans             &trans           &trans    &trans          &trans  &trans  &trans         &trans                &trans                 &kp HOME  &kp PAGE_DOWN  &kp END
+&trans        &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp EXCLAMATION  &none     &none                           &kp INT_YEN    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &kp PERCENT    &trans
+&bt BT_SEL 0  &kp AT_SIGN       &kp SEMICOLON      &kp DOLLAR       &none     &kp UNDERSCORE  &trans  &trans  &kp HASH       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none     &none          &trans
+&bt BT_SEL 1  &none             &none              &kp COLON        &kp PIPE  &none           &trans  &trans  &kp AMPERSAND  &kp LEFT_BRACE        &kp RIGHT_BRACE        &none     &kp PAGE_UP    &trans
+&bt BT_SEL 2  &trans            &trans             &trans           &trans    &trans          &trans  &trans  &trans         &trans                &none                  &kp HOME  &kp PAGE_DOWN  &kp END
             >;
         };
     };
