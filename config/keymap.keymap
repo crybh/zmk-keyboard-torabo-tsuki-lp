@@ -65,7 +65,7 @@
         layer_2 {
             bindings = <
 &trans        &trans            &trans             &trans           &trans             &trans                          &trans         &trans                &trans                 &trans    &trans         &trans
-&trans        &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp EXCLAMATION  &none              &none                           &kp JP_YEN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &kp PERCENT    &trans
+&trans        &kp JP_QUOTE  &kp JP_DQUOTE  &kp EXCLAMATION  &none              &none                           &kp JP_YEN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &kp PERCENT    &trans
 &bt BT_SEL 0  &kp AT_SIGN       &kp SEMICOLON      &kp DOLLAR       &none              &kp UNDERSCORE  &trans  &trans  &kp HASH       &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none     &none          &trans
 &bt BT_SEL 1  &none             &none              &kp COLON        &kp JP_PIPE  &none           &trans  &trans  &kp AMPERSAND  &kp LEFT_BRACE        &kp RIGHT_BRACE        &none     &kp PAGE_UP    &trans
 &bt BT_SEL 2  &trans            &trans             &trans           &trans             &trans          &trans  &trans  &trans         &trans                &none                  &kp HOME  &kp PAGE_DOWN  &kp END
