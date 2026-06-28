@@ -1,12 +1,12 @@
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
 
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
 #define JP_QUOTE        AMPERSAND         // '
@@ -38,17 +38,18 @@
  *   ・打鍵中はAMLが出ない(誤クリック消滅)
  *   ・クリックしたいときは指を一瞬止めてからボールを動かせばAMLが出る
  *   ・まだ誤発動するなら 400-500 へ、AMLが出づらすぎるなら 250 へ微調整。 */
-&zip_temp_layer {
-    require-prior-idle-ms = <350>;
-};
+
+&zip_temp_layer { require-prior-idle-ms = <350>; };
 
 /* --- トラックボールのリスナーに input processor を追加 --- */
+
 &pointing_listener {
     /* 動かす -> layer 1(クリック層)を一時有効化、0.8秒無操作で解除
      * 先頭に zip_xy_transform(X|Y INVERT) を復活 = sekigon board overlay のトラボ向き補正。
      * これを入れないと生センサ向き=上下左右とも反転する(2026-06-16 修正)。
      * 末尾の 800 = AML保持ms。ボール停止後この時間で通常層へ復帰。
      */
+
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &zip_temp_layer 4 800>;
 
     /* layer 5 が有効な間はボールをスクロールに変換
@@ -57,6 +58,7 @@
      *   -> スクロール経路でだけ X をもう一度反転して打ち消す(縦・ポインタ移動に影響なし)。
      *   この zip_xy_transform は zip_xy_to_scroll_mapper の前段に置く(2026-06-16 修正)。
      *   もし縦まで逆になったら X_INVERT を Y_INVERT に替える(=反転の追加/置換セマンティクスが逆だった場合)。 */
+
     scroller {
         layers = <5>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT) &zip_xy_to_scroll_mapper>;
@@ -67,6 +69,7 @@
 / {
     combos {
         compatible = "zmk,combos";
+
         bt_clear {
             bindings = <&bt BT_CLR>;
             key-positions = <28 29>;
@@ -77,19 +80,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-/* ============ Layer 0: ベース ============
-        layer_0 {
+        /* ============
+
+        Layer: layer_0 {
             bindings = <
-&kp GRAVE  &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                               &kp N6             &kp N7     &kp N8     &kp N9    &kp N0    &kp DEL
-&kp ESC    &kp Q         &kp W         &kp E   &kp R   &kp T                                &kp Y              &kp U      &kp I      &kp O     &kp P     &kp BSPC
-&kp TAB    &kp A         &lt 4 S       &kp D   &kp F   &kp G        &mkp LCLK    &mkp RCLK  &kp H              &kp J      &kp K      &kp L     &kp SEMI  &kp ENTER
-&kp LSHFT  &kp Z         &kp X         &kp C   &kp V   &kp B        &mkp RCLK    &mkp LCLK  &kp N              &kp M      &kp COMMA  &kp DOT   &kp UP    &kp RSHFT
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none   &none   &lt 1 SPACE  &lt 2 SPACE  &lt 1 F7   &kp JP_UNDERSCORE  &lt 2 F10  &kp SLASH  &kp LEFT  &kp DOWN  &kp RIGHT
+&kp GRAVE  &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                               &kp N6             &kp N7     &kp N8     &kp N9    &kp N0     &kp DEL
+&kp ESC    &kp Q         &kp W         &kp E   &kp R   &kp T                                &kp Y              &kp U      &kp I      &kp O     &kp P      &kp BSPC
+&kp TAB    &kp A         &lt 4 S       &kp D   &kp F   &kp G        &mkp LCLK    &mkp RCLK  &kp H              &kp J      &kp K      &kp L     &kp MINUS  &kp ENTER
+&kp LSHFT  &kp Z         &kp X         &kp C   &kp V   &kp B        &mkp RCLK    &mkp LCLK  &kp N              &kp M      &kp COMMA  &kp DOT   &kp UP     &kp RSHFT
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none   &none   &lt 1 SPACE  &lt 2 SPACE  &lt 1 F7   &kp JP_UNDERSCORE  &lt 2 F10  &kp SLASH  &kp LEFT  &kp DOWN   &kp RIGHT
             >;
         };
 
-/* ============ Layer 1: 右手テンキー、記号系 ============
-        layer_1 {
+        /* ============
+
+        Layer: layer_1 {
             bindings = <
 &trans  &kp F1        &kp F2         &kp F3        &kp F4       &kp F5                          &kp F6        &kp F7        &kp F8        &kp F9        &kp F10    &trans
 &trans  &kp JP_QUOTE  &kp JP_DQUOTE  &none         &none        &none                           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp ASTERISK  &kp PLUS   &trans
@@ -99,8 +104,9 @@
             >;
         };
 
-/* ============ Layer 2: 記号系 ============
-        layer_2 {
+        /* ============
+
+        Layer: layer_2 {
             bindings = <
 &trans        &trans        &trans         &trans           &trans       &trans                          &trans         &trans                &trans                 &trans    &trans         &trans
 &trans        &kp JP_QUOTE  &kp JP_DQUOTE  &kp EXCLAMATION  &none        &none                           &kp JP_YEN     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &kp PERCENT    &trans
@@ -110,8 +116,9 @@
             >;
         };
 
-/* ============ Layer 3: マウス操作 ============
-        layer_3 {
+        /* ============
+
+        Layer: layer_3 {
             bindings = <
 &trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &mkp MB4   &mkp MB5   &trans                  &trans  &mkp MB4   &mkp MB5   &trans  &trans  &trans
@@ -121,8 +128,9 @@
             >;
         };
 
-/* ============ Layer 4: トラックボールスクロール ============
-        layer_4 {
+        /* ============
+
+        Layer: layer_4 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
