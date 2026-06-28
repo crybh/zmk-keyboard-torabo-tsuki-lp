@@ -80,7 +80,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /* ============ Layer 0: ベース ============ */
         Layer: layer_0 {
             bindings = <
 &kp GRAVE  &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                               &kp N6             &kp N7     &kp N8     &kp N9    &kp N0     &kp DEL
@@ -91,7 +90,6 @@
             >;
         };
 
-       /* ============ Layer 1: 右手テンキー、記号系 ============ */
         Layer: layer_1 {
             bindings = <
 &trans  &kp F1        &kp F2         &kp F3        &kp F4       &kp F5                          &kp F6        &kp F7        &kp F8        &kp F9        &kp F10    &trans
@@ -102,7 +100,6 @@
             >;
         };
 
-         /* ============ Layer 2: 記号系 ============ */
         Layer: layer_2 {
             bindings = <
 &trans        &trans        &trans         &trans           &trans       &trans                          &trans         &trans                &trans                 &trans    &trans         &trans
@@ -113,7 +110,6 @@
             >;
         };
 
-        /* ============ Layer 3: マウス操作系 ============ */
         Layer: layer_3 {
             bindings = <
 &trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
@@ -124,7 +120,6 @@
             >;
         };
 
-        /* ============ Layer 4: トラックボールスクロール ============ */
         Layer: layer_4 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
