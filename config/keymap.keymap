@@ -44,23 +44,21 @@
 /* --- トラックボールのリスナーに input processor を追加 --- */
 
 &pointing_listener {
-    /* 動かす -> layer 1(クリック層)を一時有効化、0.8秒無操作で解除
+    /* 動かす -> layer 3(クリック層)を一時有効化、0.8秒無操作で解除
      * 先頭に zip_xy_transform(X|Y INVERT) を復活 = sekigon board overlay のトラボ向き補正。
      * これを入れないと生センサ向き=上下左右とも反転する(2026-06-16 修正)。
      * 末尾の 800 = AML保持ms。ボール停止後この時間で通常層へ復帰。
      */
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &zip_temp_layer 3 800>;
 
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &zip_temp_layer 4 800>;
-
-    /* layer 5 が有効な間はボールをスクロールに変換
+    /* layer 4 が有効な間はボールをスクロールに変換
      * 注: リスナーが先にX|Y両反転(上のinput-processors)してからここに来る。
      *   縦スクロール(Y)はそれでOKだったが、横スクロール(X=左右)が逆だった。
      *   -> スクロール経路でだけ X をもう一度反転して打ち消す(縦・ポインタ移動に影響なし)。
      *   この zip_xy_transform は zip_xy_to_scroll_mapper の前段に置く(2026-06-16 修正)。
      *   もし縦まで逆になったら X_INVERT を Y_INVERT に替える(=反転の追加/置換セマンティクスが逆だった場合)。 */
-
     scroller {
-        layers = <5>;
+        layers = <4>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT) &zip_xy_to_scroll_mapper>;
         process-next;
     };
