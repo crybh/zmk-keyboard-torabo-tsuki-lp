@@ -83,9 +83,9 @@
             bindings = <
 &kp GRAVE  &kp N1        &kp N2        &kp N3  &kp N4  &kp N5                               &kp N6             &kp N7     &kp N8     &kp N9    &kp N0     &kp DEL
 &kp ESC    &kp Q         &kp W         &kp E   &kp R   &kp T                                &kp Y              &kp U      &kp I      &kp O     &kp P      &kp BSPC
-&kp TAB    &kp A         &kp S         &kp D   &kp F   &kp G        &mkp LCLK    &mkp RCLK  &kp H              &kp J      &kp K      &kp L     &kp MINUS  &kp ENTER
-&kp LSHFT  &kp Z         &kp X         &kp C   &kp V   &kp B        &mkp RCLK    &mkp LCLK  &kp N              &kp M      &kp COMMA  &kp DOT   &kp UP     &kp RSHFT
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none   &none   &lt 1 SPACE  &lt 2 SPACE  &lt 1 F7   &kp JP_UNDERSCORE  &lt 2 F10  &kp SLASH  &kp LEFT  &kp DOWN   &kp RIGHT
+&kp TAB    &kp A         &kp S         &kp D   &kp F   &kp G        &kp JP_HANZEN    &mkp RCLK  &kp H              &kp J      &kp K      &kp L     &kp MINUS  &kp ENTER
+&kp LSHFT  &kp Z         &kp X         &kp C   &kp V   &kp B        &to 1            &mkp LCLK  &kp N              &kp M      &kp COMMA  &kp DOT   &kp UP     &kp RSHFT
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &none   &none   &lt 1 SPACE  &lt 2 SPACE      &lt 1 F7   &kp JP_UNDERSCORE  &lt 2 F10  &kp SLASH  &kp LEFT  &kp DOWN   &kp RIGHT
             >;
         };
 
@@ -95,7 +95,7 @@
 &trans  &kp F1        &kp F2         &kp F3        &kp F4       &kp F5                          &kp F6        &kp F7        &kp F8        &kp F9        &kp F10    &trans
 &trans  &kp JP_QUOTE  &kp JP_DQUOTE  &none         &none        &none                           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_ASTERISK  &kp PLUS   &trans
 &trans  &kp JP_AT     &kp SEMICOLON  &kp DOLLAR    &none        &kp UNDERSCORE  &trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA     &kp CARET  &trans
-&trans  &kp F11       &kp F12        &kp JP_COLON  &kp JP_PIPE  &none           &trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &trans     &trans
+&trans  &kp F11       &kp F12        &kp JP_COLON  &kp JP_PIPE  &none           &to 0   &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &trans     &trans
 &trans  &trans        &trans         &trans        &trans       &trans          &trans  &trans  &kp NUMBER_0  &trans        &trans        &trans        &trans     &trans
             >;
         };
