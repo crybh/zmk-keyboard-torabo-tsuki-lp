@@ -92,22 +92,22 @@
        /* ============ Layer 1: 右手テンキー、記号系 ============ */
        layer_1 {
             bindings = <
-&trans  &kp F1        &kp F2         &kp F3        &kp F4       &kp F5                          &kp F6        &kp F7        &kp F8        &kp F9        &kp F10    &trans
-&trans  &kp JP_QUOTE  &kp JP_DQUOTE  &none         &none        &none                           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_ASTERISK  &kp PLUS   &trans
-&trans  &kp JP_AT     &kp SEMICOLON  &kp DOLLAR    &none        &kp UNDERSCORE  &trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA     &kp CARET  &trans
-&trans  &kp F11       &kp F12        &kp JP_COLON  &kp JP_PIPE  &none           &to 0   &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &trans     &trans
-&trans  &trans        &trans         &trans        &trans       &trans          &trans  &trans  &kp NUMBER_0  &trans        &trans        &trans        &trans     &trans
+&trans  &kp F1        &kp F2         &kp F3           &kp F4       &kp F5                   &kp F6        &kp F7        &kp F8        &kp F9           &kp F10       &trans
+&trans  &kp JP_QUOTE  &kp JP_DQUOTE  &kp EXCLAMATION  &none        &none                    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_ASTERISK  &kp PLUS      &trans
+&trans  &kp JP_AT     &kp SEMICOLON  &kp DOLLAR       &none        &none    &trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA        &kp JP_CARET  &trans
+&trans  &kp F11       &kp F12        &kp JP_COLON     &kp JP_PIPE  &none    &to 0   &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD       &trans        &trans
+&trans  &trans        &trans         &trans           &trans       &trans   &trans  &trans  &kp NUMBER_0  &trans        &trans        &trans           &trans        &trans
             >;
         };
 
         /* ============ Layer 2: 記号系 ============ */
         layer_2 {
             bindings = <
-&trans        &trans        &trans         &trans           &trans       &trans                          &trans         &trans                &trans                 &trans    &trans         &trans
-&trans        &kp JP_QUOTE  &kp JP_DQUOTE  &kp EXCLAMATION  &none        &none                           &kp JP_YEN     &kp JP_LPAREN  &kp JP_RPAREN  &none     &kp PERCENT    &trans
-&bt BT_SEL 0  &kp JP_AT     &kp SEMICOLON  &kp DOLLAR       &none        &kp UNDERSCORE  &trans  &trans  &kp HASH       &kp JP_LBRACKET      &kp JP_RBRACKET      &none     &none          &trans
-&bt BT_SEL 1  &none         &none          &kp JP_COLON     &kp JP_PIPE  &none           &trans  &trans  &kp AMPERSAND  &kp JP_LBRACE        &kp JP_RBRACE        &none     &kp PAGE_UP    &trans
-&bt BT_SEL 2  &trans        &trans         &trans           &trans       &trans          &trans  &trans  &trans         &trans                &none                  &kp HOME  &kp PAGE_DOWN  &kp END
+&trans        &trans        &trans         &trans           &trans       &trans                  &trans            &trans           &trans           &trans    &trans         &trans
+&trans        &kp JP_QUOTE  &kp JP_DQUOTE  &kp EXCLAMATION  &none        &none                   &kp JP_YEN        &kp JP_LPAREN    &kp JP_RPAREN    &none     &kp PERCENT    &trans
+&bt BT_SEL 0  &kp JP_AT     &kp SEMICOLON  &kp DOLLAR       &none        &none   &trans  &trans  &kp HASH          &kp JP_LBRACKET  &kp JP_RBRACKET  &none     &kp JP_TILDE   &trans
+&bt BT_SEL 1  &none         &none          &kp JP_COLON     &kp JP_PIPE  &none   &trans  &trans  &kp JP_AMPERSAND  &kp JP_LBRACE    &kp JP_RBRACE    &none     &kp PAGE_UP    &trans
+&bt BT_SEL 2  &trans        &trans         &trans           &trans       &trans  &trans  &trans  &trans            &trans           &none            &kp HOME  &kp PAGE_DOWN  &kp END
             >;
         };
 
