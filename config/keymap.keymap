@@ -93,7 +93,7 @@
        layer_1 {
             bindings = <
 &trans  &kp F1        &kp F2         &kp F3           &kp F4       &kp F5                   &kp F6        &kp F7        &kp F8        &kp F9           &kp F10       &trans
-&trans  &kp JP_QUOTE  &kp JP_DQUOTE  &kp EXCLAMATION  &none        &none                    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_ASTERISK  &kp PLUS      &trans
+&trans  &kp JP_QUOTE  &kp JP_DQUOTE  &kp EXCLAMATION  &none        &none                    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_ASTERISK  &kp JP_PLUS   &trans
 &trans  &kp JP_AT     &kp SEMICOLON  &kp DOLLAR       &none        &none    &trans  &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp COMMA        &kp JP_CARET  &trans
 &trans  &kp F11       &kp F12        &kp JP_COLON     &kp JP_PIPE  &none    &to 0   &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD       &trans        &trans
 &trans  &trans        &trans         &trans           &trans       &trans   &trans  &trans  &kp NUMBER_0  &trans        &trans        &trans           &trans        &trans
