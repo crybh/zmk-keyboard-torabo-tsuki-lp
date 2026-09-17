@@ -10,3 +10,9 @@ if(CONFIG_ZMK_INPUT_PROCESSOR_SCROLL_INERTIA)
   zephyr_library_named(zmk-input-processor-scroll-inertia)
   zephyr_library_sources(src/input_processor_scroll_inertia.c)
 endif()
+
+if(CONFIG_ZMK_STUDIO)
+  target_sources(app PRIVATE
+    src/studio/kscan_diagnostics_handler.c
+  )
+endif()
