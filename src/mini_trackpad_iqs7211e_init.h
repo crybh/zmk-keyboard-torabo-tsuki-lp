@@ -1,9 +1,9 @@
 /*
-* This file contains all the necessary settings for the IQS7211E.
-* It can be changed from the GUI or edited here.
-* File:   IQS7211E_init.h
-* Author: Azoteq
-*/ 
+ * This file contains all the necessary settings for the IQS7211E.
+ * It can be changed from the GUI or edited here.
+ * File:   IQS7211E_init.h
+ * Author: Azoteq
+ */ 
 
 #pragma once
 
@@ -101,7 +101,7 @@
 
 /* Trackpad Settings */
 /* Memory Map Position 0x41 - 0x49 */
-#define TRACKPAD_SETTINGS_0_0                    0x2F // bit0: Flip X, bit1: Flip Y, bit3: Swap X/Y
+#define TRACKPAD_SETTINGS_0_0                    0x2D // bit0: Flip X, bit1: Flip Y, bit3: Swap X/Y
 #define TRACKPAD_SETTINGS_0_1                    0x04
 #define TRACKPAD_SETTINGS_1_0                    0x03
 #define TRACKPAD_SETTINGS_1_1                    0x02
